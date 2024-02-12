@@ -1,0 +1,95 @@
+{% extends 'backend/base.html' %}
+
+{% block title %} Product List {% endblock %}
+
+{% block content %}
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Products</h1>
+    </div>
+
+
+    <div class="card">
+        <form action="" method="get" class="card-header">
+            <div class="form-row justify-content-between">
+                <div class="col-md-2">
+                    <input type="text" name="title" placeholder="Product Title" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    <select name="variant" id="" class="form-control">
+                        <option selected disabled>--Select A Variant--</option>
+
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Price Range</span>
+                        </div>
+                        <input type="text" name="price_from" aria-label="First name" placeholder="From"
+                               class="form-control">
+                        <input type="text" name="price_to" aria-label="Last name" placeholder="To" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="date" name="date" placeholder="Date" class="form-control">
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary float-right"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+
+        <div class="card-body">
+            <div class="row">
+               <div class="col-md-2 col-sm-2 col-2"></div>
+               <div class="col-md-8 col-sm-8 col-8">
+                  <table class="table table-bordered table-striped custom_view_table">
+
+                    <tr>
+                       <td>Patient Id</td>
+                       <td>:</td>
+                       <td>{{morning_obj.patient.patient_id}}</td>
+                    </tr>
+                    <tr>
+                       <td>Patient Name</td>
+                       <td>:</td>
+                       <td>{{morning_obj.patient.patient_name}}</td>
+                    </tr>
+             
+                     <tr>
+                       <td>Type</td>
+                       <td>:</td>
+                       <td>{{morning_obj.patient.patient_category}}</td>
+                    </tr>
+                           
+                    <tr>
+                       <td>Doctor Name</td>
+                       <td>:</td>
+                       <td>{{doc_obj.doctor_name}}</td>
+                    </tr>
+                    <tr>
+                       <td>Gender </td>
+                       <td>:</td>
+                       <td>{{morning_obj.patient.gender}}</td>
+                    </tr>
+                    
+                  </table>
+               </div>
+               <div class="col-md-2 col-sm-2 col-2"></div>
+            </div>
+         </div>
+
+        <div class="card-footer">
+            <div class="row justify-content-between">
+                <div class="col-md-6">
+                    <p>Showing 1 to 10 out of 100</p>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
